@@ -3,9 +3,9 @@ import React from 'react';
 class CheckForm extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {showed: false};
-        this.state = {videoId: 'https://img.youtube.com/vi/YqeW9_5kURI/0.jpg'};
-        this.state = {imageSource: 'https://img.youtube.com/vi/YqeW9_5kURI/0.jpg'};
+        this.state = {showed: true,
+            videoId: 'https://img.youtube.com/vi/YqeW9_5kURI/0.jpg',
+            imageSource: ''};
         this.getImage = this.getImage.bind(this);
         this.onLinkChange = this.onLinkChange.bind(this);
 
