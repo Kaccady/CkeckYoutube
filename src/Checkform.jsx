@@ -7,7 +7,7 @@ class CheckForm extends React.Component {
             showed: true,
             linkOnVideo: 'https://www.youtube.com/watch?v=YqeW9_5kURI',
             imageSource: '',
-            errors: [],
+            errorsW: [],
         }
     };
 
@@ -17,11 +17,11 @@ class CheckForm extends React.Component {
         event.target.value.replace("https://www.youtube.com/watch?v=", "") + 
         '/0.jpg' });
         fetch(this.state.imageSource,{mode: 'cors', 
-        apiKey:'AIzaSyDq2afP16hclKa6dPbmpiPUdr4vjZFr_CI'})
-        .then(res => res.json())
-        .then((result) =>{
+        headers:'Authorization: Bearer AIzaSyDq2afP16hclKa6dPbmpiPUdr4vjZFr_CI'})
+        .then(res => res.text())
+        .then((errorsW) =>{
             this.setState({
-                errors: result.items
+                errorsW
             })
         })
 
@@ -36,7 +36,7 @@ class CheckForm extends React.Component {
                 <p>Получить заставку с YouTube видео:</p><br />
                 <input placeholder='ссылка на видео' value={this.state.linkOnVideo} size='64' onChange={this.onLinkChange} type='text' /><br/><br/>
                 <img hidden={this.state.showed} src={this.state.imageSource} alt='youtubeImage' id='youtubePic' />
-                <p>{this.state.errors.join(';')}</p>
+                <p>{}</p>
             </div>
         );
     }
