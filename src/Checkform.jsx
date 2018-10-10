@@ -19,9 +19,11 @@ class CheckForm extends React.Component {
     };
 
     onLinkChange = (event) => {
-        this.setState({ linkOnVideo: event.target.value, imageSource: 'https://img.youtube.com/vi/' + 
-        event.target.value.replace("https://www.youtube.com/watch?v=", "") + 
-        '/0.jpg', hidePic: false });
+        this.setState({ 
+            linkOnVideo: event.target.value, 
+            imageSource: 'https://img.youtube.com/vi/' + 
+            event.target.value.replace("https://www.youtube.com/watch?v=", "") + '/0.jpg', 
+            hidePic: false });
     };
 
     render() {
