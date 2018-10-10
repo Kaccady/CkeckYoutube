@@ -36,7 +36,7 @@ class CheckForm extends React.Component {
                 <p>Получить заставку с YouTube видео:</p><br />
                 <input placeholder='ссылка на видео' value={this.state.linkOnVideo} size='64' onChange={this.onLinkChange} type='text' /><br/><br/>
                 <img hidden={this.state.showed} src={this.state.imageSource} alt='youtubeImage' id='youtubePic' />
-                <p>{this.state.errors}</p>
+                <p>{this.state.errors.join(';')}</p>
             </div>
         );
     }
